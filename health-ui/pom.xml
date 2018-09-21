@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.microprofile-ext</groupId>
+        <artifactId>health-ext</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    
+    <groupId>org.microprofile-ext.health-ext</groupId>
+    <artifactId>health-ui</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    
+    <name>Microprofile Health Extensions :: UI</name>
+    <description>A basic UI for /health</description>
+    
+    <properties>
+        <semantic-ui.version>2.2.13</semantic-ui.version>
+        <jquery.version>3.3.1</jquery.version>
+    </properties>
+    
+    <dependencies>
+        <!-- Webjars: see http://www.webjars.org/documentation -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>semantic-ui</artifactId>
+            <version>${semantic-ui.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+                
+        <!-- Copy all web content files META-INF folder, and push it though a filter to replace maven properties -->
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/webapp</directory>
+                <targetPath>${project.build.directory}/classes/META-INF/resources</targetPath>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.css</include>
+                    <include>**/*.html</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/webapp</directory>
+                <targetPath>${project.build.directory}/classes/META-INF/resources</targetPath>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.css</exclude>
+                    <exclude>**/*.html</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        
+    </build>
+    
+</project>
