@@ -4,12 +4,12 @@
     <parent>
         <groupId>org.microprofile-ext</groupId>
         <artifactId>health-ext</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     
     <groupId>org.microprofile-ext.health-ext</groupId>
     <artifactId>healthprobe-system</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     
     <name>Microprofile Health Extensions :: System Health probes</name>
