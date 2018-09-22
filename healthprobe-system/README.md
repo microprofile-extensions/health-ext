@@ -20,4 +20,4 @@ Once the system load is greater than this value, the health probe will report do
 
 ## Example output
 
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/health-ui/screenshot.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/healthprobe-system/screenshot.png)
