@@ -7,13 +7,15 @@ This library gives you a small web gui on top of ```/health```
 
 In ```pom.xml```
     
-    ```xml
+```xml
+
     <dependency>
         <groupId>org.microprofile-ext.health-ext</groupId>
         <artifactId>health-ui</artifactId>
         <version>XXXXX</version>
     </dependency>
-    ```
+
+```
 
 Then go to /<context_root>/health-ui, eg: http://localhost:7080/profiling/health-ui/
 

@@ -2,15 +2,18 @@
 
 ## Adding JVM Probes
 
-In ```pom.xml```
+In ```pom.xml```:
     
-    ```xml
+```xml
+
     <dependency>
         <groupId>org.microprofile-ext.health-ext</groupId>
         <artifactId>healthprobe-jvm</artifactId>
         <version>XXXXX</version>
     </dependency>
-    ```
+
+```
+
 ## Configuration options
 
 * health.jvm.heapmemory.maxpercentage = 0.9 (default)

@@ -2,15 +2,17 @@
 
 ## Adding System probes
 
-In ```pom.xml```
+In ```pom.xml```:
     
-    ```xml
+```xml
+
     <dependency>
         <groupId>org.microprofile-ext.health-ext</groupId>
         <artifactId>healthprobe-system</artifactId>
         <version>XXXXX</version>
     </dependency>
-    ```
+
+```
 
 ## Configuration options
 
