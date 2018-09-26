@@ -169,6 +169,7 @@
             </build>
         </profile>
     </profiles>
+    
     <modules>
         <module>healthprobe-system</module>
         <module>healthprobe-jvm</module>
