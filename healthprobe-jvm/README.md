@@ -13,6 +13,7 @@ In ```pom.xml```:
         <groupId>org.microprofile-ext.health-ext</groupId>
         <artifactId>healthprobe-jvm</artifactId>
         <version>XXXXX</version>
+        <scope>runtime</scope>
     </dependency>
 
 ```
