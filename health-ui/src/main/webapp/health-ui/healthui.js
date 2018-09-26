@@ -21,9 +21,9 @@ function processRequest(healthprobes) {
     var state = healthprobes.outcome;
     
     if(state === "DOWN"){
-        stateItem.innerHTML = "<i class='big red exclamation circle icon'>Down</i> ";
+        stateItem.innerHTML = "<h3><span class='badge badge-danger'>Down</span></h3>";
     }else{
-        stateItem.innerHTML = "<i class='big green check circle icon'>Up</i> ";
+        stateItem.innerHTML = "<h3><span class='badge badge-success'>Up</span></h3>";
     }
     
     var checks = healthprobes.checks;
@@ -34,15 +34,18 @@ function processRequest(healthprobes) {
         var check = checks[i];
         var name = check.name;
         var updown = check.state;
-        var ribboncolor = "green";
-        if(updown === "DOWN")ribboncolor = "red";
+        var headingclass = "bg-success";
+        if(updown === "DOWN")headingclass = "bg-danger";
         
-        text += "<div class='eight wide column'>" +
-                
-                    "<div class='ui raised segment'>" + 
-                        "<a class='ui " + ribboncolor + " ribbon label'>" + name + "</a>" + 
-                        "<table class='ui very basic collapsing celled table'>" + 
-                            "<tbody>";
+        text += "<div class='col-sm-4'>" +
+                "<div class='shadow-lg p-3 mb-5 bg-white rounded'>" +
+                "<table class='table'>" +
+            "<thead>" +
+                "<tr class='" + headingclass+ "'>" +
+                    "<th colspan='2'>" + name + "</th>" +
+                "</tr>" +
+            "</thead>" +
+            "<tbody>";
         
         var meta = check.data;
         
@@ -50,16 +53,16 @@ function processRequest(healthprobes) {
             var v = meta[k];
             
             text += "<tr>" + 
-                        "<td data-label='key'>" + k +"</td>" + 
-                        "<td data-label='value'>" + v + "</td>" + 
+                        "<td>" + k +"</td>" + 
+                        "<td>" + v + "</td>" + 
                     "</tr>";
         }
-        
-        text += "</tbody>" + 
-                "</table>" + 
-                "</div>" +
-                "</div>";
                 
+        text += "</tbody>" +
+        "</table>" +
+        "</div>" +
+        "</div>";
+        
     } 
     tiles.innerHTML = text;
 }
