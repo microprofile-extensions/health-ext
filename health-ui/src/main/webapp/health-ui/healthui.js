@@ -6,7 +6,7 @@
 var tiles = document.getElementById("tiles");
 var stateItem = document.getElementById("state");
 var xmlhttp = new XMLHttpRequest();
-var url = "/health";
+var url = "/health"; // TODO - This will be a posible problem if you proxy.
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4) {
