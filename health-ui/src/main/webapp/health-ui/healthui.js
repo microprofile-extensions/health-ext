@@ -3,27 +3,41 @@
  * Phillip Kruger (phillip.kruger@phillip-kruger.com)
  */
 
-var tiles = document.getElementById("tiles");
-var stateItem = document.getElementById("state");
-var xmlhttp = new XMLHttpRequest();
-var url = "/health"; // TODO - This will be a posible problem if you proxy.
+function processSettings(){
+    
+    // Title
+    var title = localStorage.getItem("title");
+    if(title === null || title === '')title = "MicroProfile Health UI";
+    $("#navbar_title").html(title);
+    $("#settings_form_title").val(title);
+    document.title = title;
+}
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4) {
-        var healthprobes = JSON.parse(this.responseText);
-        processRequest(healthprobes);
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+function loadHealthData(){
+    var xmlhttp = new XMLHttpRequest();
+    var url = getUrl();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState === 4) {
+            if (xmlhttp.status === 200 || xmlhttp.status === 503) {  
+                var healthprobes = JSON.parse(this.responseText);
+                processData(healthprobes);
+                initLayout(); 
+            } else {  
+                processError(xmlhttp);
+            } 
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();   
+}
 
-function processRequest(healthprobes) {
+function processData(healthprobes) {
     var state = healthprobes.outcome;
     
     if(state === "DOWN"){
-        stateItem.innerHTML = "<h3><span class='badge badge-danger'>Down</span></h3>";
+        $('#state').html("<h3><i class='fa fa-refresh' aria-hidden='true'></i> <span class='badge badge-danger'>Down</span></h3>");
     }else{
-        stateItem.innerHTML = "<h3><span class='badge badge-success'>Up</span></h3>";
+        $('#state').html("<h3><i class='fa fa-refresh' aria-hidden='true'></i> <span class='badge badge-success'>Up</span></h3>");
     }
     
     var checks = healthprobes.checks;
@@ -36,9 +50,9 @@ function processRequest(healthprobes) {
         var updown = check.state;
         var headingclass = "bg-success";
         if(updown === "DOWN")headingclass = "bg-danger";
-        
-        text += "<div class='col-sm-4'>" +
-                "<div class='shadow-lg p-3 mb-5 bg-white rounded'>" +
+   
+        text += "<div class='grid-item'>";
+        text += "<div class='shadow-lg p-3 mb-5 bg-white rounded'>" +
                 "<table class='table'>" +
             "<thead>" +
                 "<tr class='" + headingclass+ "'>" +
@@ -64,5 +78,59 @@ function processRequest(healthprobes) {
         "</div>";
         
     } 
-    tiles.innerHTML = text;
+    
+    
+    $('#grid').html(text);
 }
+
+function processError(xmlhttp){
+    $('#state').html("<h3><span class='badge badge-warning'>Error fetching data</span></h3>");
+    $('#grid').html("<blockquote class='blockquote text-center'>" +
+                        "<p class='mb-0'> Error while fetching data from [" + getUrl() +"]</p>" + 
+                        "<footer class='blockquote-footer'>" + xmlhttp.responseText + "</footer>" +
+                        "</blockquote>");
+    
+}
+
+function getUrl(){
+    var url = localStorage.getItem("url");
+    if(url === null || url === '')url = "/health";
+    return url;
+}
+
+function changeSettings(){
+    // Title
+    var title = $('#settings_form_title').val();
+    localStorage.setItem("title", title);
+    
+    // URL (If the url changed we need to reload)
+    var newurl = $('#settings_form_url').val();
+    var oldurl = localStorage.getItem("url");
+    if(newurl !== oldurl){
+        localStorage.setItem("url", newurl);
+        loadHealthData();
+    }
+    
+    $('#settingsModal').modal('hide');
+    
+    processSettings();
+}
+
+function initLayout(){
+    
+    var grid = document.getElementById('grid');
+    var pckry = new Packery( grid, {
+        // options
+        itemSelector: '.grid-item',
+        gutter: 30
+    });
+}
+
+function reloadData(){
+    loadHealthData();
+}
+
+(function() {
+    processSettings();
+    loadHealthData();
+})();

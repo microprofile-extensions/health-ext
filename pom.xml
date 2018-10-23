@@ -174,5 +174,6 @@
         <module>healthprobe-system</module>
         <module>healthprobe-jvm</module>
         <module>health-ui</module>
+        <module>health-example</module>
     </modules>
 </project>

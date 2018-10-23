@@ -1,0 +1,14 @@
+swarm:
+    logging:
+        loggers:
+            org.microprofileext.health:
+                level: FINEST
+#    microprofile:
+#        config:
+#            config-sources:
+#                environment:
+#                    ordinal: 300
+#                    properties:
+#                        schedule.hour: "*"
+#                        schedule.minute: "*"
+#                        schedule.seconds: "*/10"
