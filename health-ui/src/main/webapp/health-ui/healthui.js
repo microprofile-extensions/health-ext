@@ -2,6 +2,7 @@
  * Javascript file for health UI
  * Phillip Kruger (phillip.kruger@phillip-kruger.com)
  */
+var refreshTimer;
 
 function processSettings(){
     
@@ -11,6 +12,22 @@ function processSettings(){
     $("#navbar_title").html(title);
     $("#settings_form_title").val(title);
     document.title = title;
+    
+    // Poll
+    var poll = localStorage.getItem("poll");
+    $("#settings_form_poll").val(poll);
+    if(poll === null || poll === '' || poll === 'off'){
+        clearInterval(refreshTimer);
+    }else{
+        var interval = getInterval(poll);
+        clearInterval(refreshTimer);
+        if(interval>0){
+            refreshTimer = setInterval(function(){ 
+                loadHealthData(); 
+            }, interval);
+        }
+    }
+    
 }
 
 function loadHealthData(){
@@ -35,9 +52,9 @@ function processData(healthprobes) {
     var state = healthprobes.outcome;
     
     if(state === "DOWN"){
-        $('#state').html("<h3><i class='fa fa-refresh' aria-hidden='true'></i> <span class='badge badge-danger'>Down</span></h3>");
+        $('#state').html("<h3><span class='badge badge-danger'><i class='fa fa-refresh' aria-hidden='true'></i> Down</span></h3>");
     }else{
-        $('#state').html("<h3><i class='fa fa-refresh' aria-hidden='true'></i> <span class='badge badge-success'>Up</span></h3>");
+        $('#state').html("<h3><span class='badge badge-success'><i class='fa fa-refresh' aria-hidden='true'></i> Up</span></h3>");
     }
     
     var checks = healthprobes.checks;
@@ -111,6 +128,10 @@ function changeSettings(){
         loadHealthData();
     }
     
+    // Poll
+    var poll = $('#settings_form_poll').val();
+    localStorage.setItem("poll", poll);
+    
     $('#settingsModal').modal('hide');
     
     processSettings();
@@ -126,9 +147,28 @@ function initLayout(){
     });
 }
 
-function reloadData(){
-    loadHealthData();
+function getInterval(text){
+
+    if(text === "off"){
+        return 0;
+    }else if(text === "every 5 seconds"){
+        return 5 * 1000;
+    }else if(text === "every 10 seconds"){
+        return 10 * 1000;
+    }else if(text === "every 30 seconds"){
+        return 30 * 1000;
+    }else if(text === "every minute"){
+        return 60 * 1000;    
+    }else if(text === "every 5 minutes"){
+        return 60 * 5 * 1000; 
+    }else if(text === "every 10 minutes"){
+        return 60 * 10 * 1000;        
+    }else {
+        return 0;
+    }
+    
 }
+
 
 (function() {
     processSettings();
