@@ -4,12 +4,12 @@
     <parent>
         <groupId>org.microprofile-ext</groupId>
         <artifactId>health-ext</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5-SNAPSHOT</version>
     </parent>
     
     <groupId>org.microprofile-ext.health-ext</groupId>
     <artifactId>health-ui</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <name>Microprofile Health Extensions :: UI</name>
