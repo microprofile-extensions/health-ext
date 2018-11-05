@@ -21,8 +21,14 @@ In ```pom.xml```
 
 ```
 
-Then go to /<context_root>/health-ui, eg: http://localhost:7080/profiling/health-ui/
+Then go to /<context_root>/health-ui, eg: http://localhost:8080/health-example/health-ui/
 
 ## Example screenshot
 
+### Dashboard
+
 ![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/health-ui/screenshot.png)
+
+### Settings (to refresh automatically etc.)
+
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/health-ui/screenshot_settings.png)
