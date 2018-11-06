@@ -1,4 +1,6 @@
-# Health Extensions | UI
+[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/master/README.md)
+
+# Health UI
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.microprofile-ext.health-ext/health-ui/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.microprofile-ext.health-ext/health-ui)
 [![Javadocs](https://www.javadoc.io/badge/org.microprofile-ext.health-ext/health-ui.svg)](https://www.javadoc.io/doc/org.microprofile-ext.health-ext/health-ui)
