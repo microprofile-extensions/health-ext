@@ -5,6 +5,6 @@
 ___________
 Here you will find some additional reusable health probes and a basic ui:
 
-* [System Health probe](https://github.com/microprofile-extensions/health-ext/tree/master/healthprobe-system)
-* [JVM Health probe](https://github.com/microprofile-extensions/health-ext/tree/master/healthprobe-jvm)
-* [Health UI](https://github.com/microprofile-extensions/health-ext/tree/master/health-ui)
+* [System Health probe](https://github.com/microprofile-extensions/health-ext/blob/master/healthprobe-system/README.md)
+* [JVM Health probe](https://github.com/microprofile-extensions/health-ext/blob/master/healthprobe-jvm/README.md)
+* [Health UI](https://github.com/microprofile-extensions/health-ext/blob/master/health-ui/README.md)
