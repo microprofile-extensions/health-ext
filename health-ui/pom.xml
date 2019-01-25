@@ -16,9 +16,9 @@
     <description>A basic UI for /health</description>
     
     <properties>
-        <bootstrap.version>4.1.3</bootstrap.version>
+        <bootstrap.version>4.2.1</bootstrap.version>
         <jquery.version>3.0.0</jquery.version>
-        <popper.version>1.14.4</popper.version>
+        <popper.version>1.14.6</popper.version>
         <packery.version>2.1.1</packery.version>
         <fontawesome.version>4.7.0</fontawesome.version>
     </properties>
