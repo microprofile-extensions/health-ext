@@ -31,7 +31,7 @@ public class ExampleService {
     @GET @Path("{name}")
     @Operation(description = "Getting something")
     @APIResponses({
-            @APIResponse(responseCode = "200", description = "Successfull, returning something", 
+            @APIResponse(responseCode = "200", description = "Successful, returning something", 
                     content = @Content(schema = @Schema(implementation = Something.class)))
     })
     public Response getSomething(
