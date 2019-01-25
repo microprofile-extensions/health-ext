@@ -1,11 +1,7 @@
 package org.microprofileext.health.example;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
 import java.util.Random;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
