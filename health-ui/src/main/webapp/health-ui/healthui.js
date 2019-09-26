@@ -35,11 +35,15 @@ function loadHealthData(){
     var url = getUrl();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState === 4) {
-            if (xmlhttp.status === 200 || xmlhttp.status === 503) {  
+            if (xmlhttp.status === 200) {  
                 var healthprobes = JSON.parse(this.responseText);
-                processData(healthprobes);
+                process200Data(healthprobes);
                 initLayout(); 
-            } else {  
+            }else if(xmlhttp.status === 503) {
+                var healthprobes = JSON.parse(this.responseText);
+                process503Data(healthprobes);
+                initLayout();
+            }else {  
                 processError(xmlhttp);
             } 
         }
@@ -48,7 +52,7 @@ function loadHealthData(){
     xmlhttp.send();   
 }
 
-function processData(healthprobes) {
+function process200Data(healthprobes){
     var state = healthprobes.outcome;
     
     if(state === "DOWN"){
@@ -56,6 +60,15 @@ function processData(healthprobes) {
     }else{
         $('#state').html("<h3><span class='badge badge-success'><i class='fa fa-refresh' aria-hidden='true'></i> Up</span></h3>");
     }
+    processData(healthprobes);
+}
+
+function process503Data(healthprobes){
+    $('#state').html("<h3><span class='badge badge-warning'>Error fetching data</span></h3>");
+    processData(healthprobes);
+}
+
+function processData(healthprobes) {
     
     var checks = healthprobes.checks;
     
@@ -99,6 +112,7 @@ function processData(healthprobes) {
     
     $('#grid').html(text);
 }
+
 
 function processError(xmlhttp){
     $('#state').html("<h3><span class='badge badge-warning'>Error fetching data</span></h3>");
