@@ -3,7 +3,7 @@
 
     <!-- Enable features -->
     <featureManager>
-        <feature>microProfile-1.4</feature>
+        <feature>microProfile-3.3</feature>
     </featureManager>
     
     <httpEndpoint id="defaultHttpEndpoint"

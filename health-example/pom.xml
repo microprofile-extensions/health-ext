@@ -56,7 +56,7 @@
             </activation>
             
             <properties>
-                <thorntail.version>2.3.0.Final</thorntail.version>
+                <thorntail.version>2.7.0.Final</thorntail.version>
                 <thorntail.configDir>${basedir}${file.separator}src${file.separator}main${file.separator}resources</thorntail.configDir>
             </properties>
             
@@ -156,8 +156,8 @@
             
             <properties>
                 <!-- payara-micro properties -->
-                <payara-micro.maven.version>1.0.2</payara-micro.maven.version>
-                <payara-micro.version>5.184</payara-micro.version>
+                <payara-micro.maven.version>1.0.7</payara-micro.maven.version>
+                <payara-micro.version>5.2020.2</payara-micro.version>
                 <payara-micro.installDir>${java.io.tmpdir}${file.separator}${project.artifactId}${file.separator}payara-micro</payara-micro.installDir>
                 <payara-micro.configDir>${basedir}${file.separator}src${file.separator}main${file.separator}payara-micro${file.separator}config</payara-micro.configDir>
                 <payara-micro.logsDir>${payara-micro.installDir}${file.separator}logs</payara-micro.logsDir>
@@ -243,15 +243,15 @@
             </activation>
             
             <properties>
-                <log.name>org.microprofileext.config</log.name>
+                <log.name>org.microprofileext.health</log.name>
                 <log.level>FINEST</log.level>
-                <openliberty.version>18.0.0.4</openliberty.version>
+                <openliberty.version>20.0.0.7</openliberty.version>
                 <openliberty.http.port>8080</openliberty.http.port>
                 <openliberty.https.port>8443</openliberty.https.port>
                 <openliberty.installDir>${java.io.tmpdir}${file.separator}${project.artifactId}${file.separator}openliberty</openliberty.installDir>
                 <openliberty.configDir>${basedir}${file.separator}src${file.separator}main${file.separator}openliberty${file.separator}config</openliberty.configDir>
                 <openliberty.logsDir>${openliberty.installDir}${file.separator}wlp${file.separator}usr${file.separator}servers${file.separator}defaultServer${file.separator}logs</openliberty.logsDir>
-                <openliberty.maven.version>2.6</openliberty.maven.version>
+                <openliberty.maven.version>2.7</openliberty.maven.version>
             </properties>
             
             <build>
@@ -367,6 +367,16 @@
             
         </profile>
         
+        <profile>
+            <id>jdk11plus</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <jboss.extra.opts>--add-modules java.se</jboss.extra.opts>
+                <maven.compiler.release>8</maven.compiler.release>
+            </properties>
+        </profile>
     </profiles>
     
 </project>

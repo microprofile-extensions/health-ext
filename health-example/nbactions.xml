@@ -10,4 +10,15 @@
                 <activatedProfile>thorntail</activatedProfile>
             </activatedProfiles>
         </action>
+        <action>
+            <actionName>CUSTOM-openliberty</actionName>
+            <displayName>openliberty</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>openliberty</activatedProfile>
+            </activatedProfiles>
+        </action>
     </actions>

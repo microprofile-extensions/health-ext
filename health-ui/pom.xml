@@ -16,10 +16,8 @@
     <description>A basic UI for /health</description>
     
     <properties>
-        <bootstrap.version>4.2.1</bootstrap.version>
-        <jquery.version>3.0.0</jquery.version>
-        <popper.version>1.14.6</popper.version>
-        <packery.version>2.1.1</packery.version>
+        <bootstrap.version>4.5.0</bootstrap.version>
+        <jquery.version>3.5.1</jquery.version>
         <fontawesome.version>4.7.0</fontawesome.version>
     </properties>
     
@@ -34,15 +32,8 @@
         
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>popper.js</artifactId>
-            <version>${popper.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>packery</artifactId>
-            <version>${packery.version}</version>
+            <artifactId>jquery</artifactId>
+            <version>${jquery.version}</version>
             <scope>runtime</scope>
         </dependency>
         

@@ -166,6 +166,18 @@
 
             </build>
         </profile>
+        
+        <profile>
+            <id>jdk11plus</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <jboss.extra.opts>--add-modules java.se</jboss.extra.opts>
+                <maven.compiler.release>8</maven.compiler.release>
+            </properties>
+        </profile>
+        
     </profiles>
     
     <modules>
