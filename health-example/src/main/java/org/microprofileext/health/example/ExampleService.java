@@ -16,10 +16,6 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
-/**
- * Example Service. JAX-RS
- * @author Phillip Kruger (phillip.kruger@phillip-kruger.com)
- */
 @RequestScoped
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON) @Produces(MediaType.APPLICATION_JSON)

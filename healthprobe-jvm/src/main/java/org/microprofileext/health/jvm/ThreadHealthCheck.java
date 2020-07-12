@@ -5,16 +5,16 @@ import java.lang.management.ThreadMXBean;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
+import org.eclipse.microprofile.health.Liveness;
 
 /**
  * Checking the number of threads
  * @author Phillip Kruger (phillip.kruger@phillip-kruger.com)
  */
-@Health
+@Liveness
 @ApplicationScoped
 public class ThreadHealthCheck implements HealthCheck {
     @Inject @ConfigProperty(name = "health.jvm.threadcount.max", defaultValue = "-1") // default switched off
