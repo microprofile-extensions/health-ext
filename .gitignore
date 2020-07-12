@@ -25,3 +25,4 @@ hs_err_pid*
 /healthprobe-jvm/target/
 /health-ui/target/
 /health-example/target/
+/quarkus-example/target/

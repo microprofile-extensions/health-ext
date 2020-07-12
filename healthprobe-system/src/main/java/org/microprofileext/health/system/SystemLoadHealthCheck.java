@@ -19,7 +19,7 @@ import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 public class SystemLoadHealthCheck implements HealthCheck {
 
     @Inject @ConfigProperty(name = "health.system.load.max", defaultValue = "0.7")
-    private double max;
+    double max;
     
     @Override
     public HealthCheckResponse call() {

@@ -19,7 +19,7 @@ import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 public class HeapMemoryHealthCheck implements HealthCheck {
 
     @Inject @ConfigProperty(name = "health.jvm.heapmemory.maxpercentage", defaultValue = "0.9")
-    private double maxPercentage;
+    double maxPercentage;
     
     @Override
     public HealthCheckResponse call() {

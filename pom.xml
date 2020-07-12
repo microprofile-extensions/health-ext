@@ -55,7 +55,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         
         <lombok.version>1.18.4</lombok.version>
-        <microProfile.version>2.1</microProfile.version>
+        <microProfile.version>3.3</microProfile.version>
     </properties>
     
     <dependencyManagement>
@@ -68,29 +68,15 @@
                 <type>pom</type>
                 <scope>provided</scope>
             </dependency>
-            <!-- Lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     
     <dependencies>
-        
         <!-- MicroProfile -->
         <dependency>
             <groupId>org.eclipse.microprofile</groupId>
             <artifactId>microprofile</artifactId>
             <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -185,5 +171,6 @@
         <module>healthprobe-jvm</module>
         <module>health-ui</module>
         <module>health-example</module>
+        <module>quarkus-example</module>
     </modules>
 </project>

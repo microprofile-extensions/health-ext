@@ -57,9 +57,9 @@ function processOk(healthprobes) {
 
 
     if (updown === "DOWN") {
-        $('#state').html("<h3><span class='badge badge-danger'><i class='fa fa-refresh' aria-hidden='true'></i> Down</span></h3>");
+        $('#state').html("<h3><span class='badge badge-danger'><img src='refresh.png'/> Down</span></h3>");
     } else {
-        $('#state').html("<h3><span class='badge badge-success'><i class='fa fa-refresh' aria-hidden='true'></i> Up</span></h3>");
+        $('#state').html("<h3><span class='badge badge-success'><img src='refresh.png'/> Up</span></h3>");
     }
     processData(healthprobes);
 }

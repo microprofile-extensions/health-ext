@@ -1,5 +1,6 @@
 package org.microprofileext.health.example;
 
+
 import java.util.Date;
 import java.util.UUID;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
