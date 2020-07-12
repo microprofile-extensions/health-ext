@@ -129,10 +129,10 @@ function compare(a, b) {
 }
 
 function processError(xmlhttp) {
-    $('#state').html("<h3><span class='badge badge-warning'>Error fetching data</span></h3>");
+    $('#state').html("<h3><span class='badge badge-warning'><img src='refresh.png'/> Error fetching data</span></h3>");
     $('#grid').html("<blockquote class='blockquote text-center'>" +
             "<p class='mb-0'> Error while fetching data from [" + getUrl() + "]</p>" +
-            "<footer class='blockquote-footer'>" + xmlhttp.responseText + "</footer>" +
+            "<p class='mb-0'>" + xmlhttp.responseText + "</p>" +
             "</blockquote>");
 
 }
