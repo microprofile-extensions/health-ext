@@ -13,6 +13,6 @@ Using maven, you can start this application in dev mode:
     mvn clean install quarkus:dev
 ```
 
-You can then go to http://localhost:8080/health-example/health-ui/index.html to see the UI and probes
+You can then go to http://localhost:8080/health-ui/index.html to see the UI and probes
 
 NOTE: You have to include the `index.html` at the end of the URL.
