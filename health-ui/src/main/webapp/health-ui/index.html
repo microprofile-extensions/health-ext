@@ -17,12 +17,11 @@
         <title>MicroProfile Health UI</title>
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="../webjars/bootstrap/${bootstrap.version}/css/bootstrap.min.css"/>
-        <!-- Font awesome -->
-        <link rel="stylesheet" href="../webjars/fontawesome/${fontawesome.version}/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="bootstrap.min.css"/>
         
         <style>
             .grid-item { width: 30%; }
+            .gutter-sizer { width: 1%; }
         </style>
         
     </head>
@@ -30,13 +29,13 @@
     <body>
         <nav class="navbar sticky-top navbar-dark bg-dark">
         
-            <a class="navbar-brand" href="javascript: initLayout()">
+            <a class="navbar-brand">
                 <img src="mplogo.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
                 <span id="navbar_title">MicroProfile Health UI</span>
             </a>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#settingsModal"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" data-toggle="modal" data-target="#settingsModal"><img src="settings.png"></a>
                 </li>
             </ul>
             
@@ -97,21 +96,14 @@
             </div>
             
             
-            <div id="grid" class="grid">
+            <div id="grid" class="card-columns">
                 Loading health probes...    
             </div>
+            
         </div>
         
-        <div class="fixed-bottom">
-            <p class="text-center text-light bg-dark">
-                <a href="https://github.com/microprofile-extensions/health-ext" target="_blank" class="nav-link">Created with MicroProfile Extensions</a>
-            </p>
-        </div>
-        
-        <script src="../webjars/jquery/${jquery.version}/jquery.min.js"></script>
-        <script src="../webjars/popper.js/${popper.version}/popper.min.js"></script>
-        <script src="../webjars/bootstrap/${bootstrap.version}/js/bootstrap.min.js"></script>
-        <script src="../webjars/packery/${packery.version}/dist/packery.pkgd.min.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
         <script src="healthui.js"></script>
     </body>
 </html>

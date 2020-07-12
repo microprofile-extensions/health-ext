@@ -18,7 +18,7 @@ import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 @ApplicationScoped
 public class ThreadHealthCheck implements HealthCheck {
     @Inject @ConfigProperty(name = "health.jvm.threadcount.max", defaultValue = "-1") // default switched off
-    private long maxThreadCount;
+    long maxThreadCount;
     
     @Override
     public HealthCheckResponse call() {

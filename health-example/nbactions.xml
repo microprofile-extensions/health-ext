@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
         <action>
-            <actionName>CUSTOM-thorntail:run</actionName>
-            <displayName>thorntail:run</displayName>
+            <actionName>CUSTOM-openliberty</actionName>
+            <displayName>openliberty</displayName>
             <goals>
-                <goal>thorntail:run</goal>
+                <goal>clean</goal>
+                <goal>install</goal>
             </goals>
             <activatedProfiles>
-                <activatedProfile>thorntail</activatedProfile>
+                <activatedProfile>openliberty</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-payara</actionName>
+            <displayName>payara</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>payara</activatedProfile>
             </activatedProfiles>
         </action>
     </actions>
