@@ -7,10 +7,6 @@ import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 
-/**
- * Checking some pretend stuff
- * @author Phillip Kruger (phillip.kruger@phillip-kruger.com)
- */
 @Health
 @ApplicationScoped
 public class SomeHealthCheck implements HealthCheck {

@@ -14,5 +14,3 @@ Using maven, you can start this application in dev mode:
 ```
 
 You can then go to http://localhost:8080/health-ui/index.html to see the UI and probes
-
-NOTE: You have to include the `index.html` at the end of the URL.
