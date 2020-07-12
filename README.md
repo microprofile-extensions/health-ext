@@ -13,4 +13,5 @@ Here you will find some additional reusable health probes and a basic ui:
 
 ## Example
 
-Also look at the [example application](https://github.com/microprofile-extensions/health-ext/blob/master/health-example/README.md) to see how this is used
+Also look at this [example application](https://github.com/microprofile-extensions/health-ext/blob/master/health-example/README.md) or 
+this [example Quarkus application](https://github.com/microprofile-extensions/health-ext/blob/master/quarkus-example/README.md) to see how this is used
