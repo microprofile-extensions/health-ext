@@ -1,7 +1,7 @@
 language: java
 
 before_deploy:
-  - mvn help:evaluate -Dmaven.javadoc.skip=true -N -Dexpression=project.version|grep -v '\['
+  - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
   - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep -v '\[')
 
 ## export GPG details
@@ -14,4 +14,4 @@ install:
 
 ## Build and release to maven central
 script:
-    mvn clean deploy --settings .maven.xml -DskipTests=true -Dmaven.javadoc.skip=true -B -U -Prelease
+    mvn clean deploy --settings .maven.xml -DskipTests=true -B -U -Prelease
