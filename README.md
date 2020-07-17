@@ -1,3 +1,16 @@
+# Notice:
+**All health extensions has moved to [Smallrye](https://smallrye.io/)**
+**The code is available in [GitHub](https://github.com/smallrye/smallrye-health)**
+
+Below is just for historical reference.
+
+*********************
+*********************
+*********************
+*********************
+*********************
+*********************
+
 [Extensions for MicroProfile](https://www.microprofile-ext.org/)
 
 # Health Extensions
