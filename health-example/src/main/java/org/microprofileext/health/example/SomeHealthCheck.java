@@ -1,11 +1,12 @@
 package org.microprofileext.health.example;
 
-import java.util.Random;
-import javax.enterprise.context.ApplicationScoped;
-import org.eclipse.microprofile.health.Readiness;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
+import org.eclipse.microprofile.health.Readiness;
+
+import javax.enterprise.context.ApplicationScoped;
+import java.util.Random;
 
 /**
  * Checking some pretend stuff
@@ -25,7 +26,7 @@ public class SomeHealthCheck implements HealthCheck {
                 .withData("some number", r.nextInt())
                 .withData("some boolean", randomUpDown);
 
-        return responseBuilder.state(randomUpDown).build();
+        return responseBuilder.status(randomUpDown).build();
         
     }
     

@@ -1,14 +1,15 @@
 package org.microprofileext.health.jvm;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 import org.eclipse.microprofile.health.Liveness;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadMXBean;
 
 /**
  * Checking the number of threads
@@ -46,7 +47,7 @@ public class ThreadHealthCheck implements HealthCheck {
 
         if(threadCount > 0 && maxThreadCount > 0){
             boolean status = threadCount < maxThreadCount;
-            return responseBuilder.state(status).build();
+            return responseBuilder.status(status).build();
         }else{
             // Thread count not available
             return responseBuilder.up().build();
