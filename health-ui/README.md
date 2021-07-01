@@ -1,4 +1,4 @@
-[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/master/README.md)
+[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/main/README.md)
 
 # Health UI
 
@@ -29,7 +29,7 @@ Then go to /<context_root>/health-ui, eg: http://localhost:8080/health-example/h
 
 ### Dashboard
 
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/health-ui/screenshot.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/main/health-ui/screenshot.png)
 
 ### Settings (to refresh automatically etc.)
 
