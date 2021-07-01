@@ -1,14 +1,15 @@
 package org.microprofileext.health.system;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.OperatingSystemMXBean;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 import org.eclipse.microprofile.health.Liveness;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import java.lang.management.ManagementFactory;
+import java.lang.management.OperatingSystemMXBean;
 
 /**
  * Checking average load usage against configured max load
@@ -44,7 +45,7 @@ public class SystemLoadHealthCheck implements HealthCheck {
 
         if(systemLoadAverage>0){
             boolean status = systemLoadAveragePerProcessors < max;
-            return responseBuilder.state(status).build();
+            return responseBuilder.status(status).build();
         }else{
             // Load average not available
             return responseBuilder.up().build();
