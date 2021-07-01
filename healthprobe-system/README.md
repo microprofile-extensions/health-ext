@@ -1,4 +1,4 @@
-[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/master/README.md)
+[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/main/README.md)
 
 # System probes
 
@@ -29,4 +29,4 @@ Once the system load is greater than this value, the health probe will report do
 
 ## Example output
 
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/healthprobe-system/screenshot.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/main/healthprobe-system/screenshot.png)
