@@ -1,4 +1,4 @@
-[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/master/README.md)
+[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/main/README.md)
 
 # JVM probes
 
@@ -28,6 +28,6 @@ In ```pom.xml```:
 
 ## Example output
 
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/healthprobe-jvm/screenshot.png)
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/healthprobe-jvm/screenshot_1.png)
-![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/master/healthprobe-jvm/screenshot_2.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/main/healthprobe-jvm/screenshot.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/main/healthprobe-jvm/screenshot_1.png)
+![](https://raw.githubusercontent.com/microprofile-extensions/health-ext/main/healthprobe-jvm/screenshot_2.png)
