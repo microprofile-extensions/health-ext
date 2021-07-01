@@ -1,4 +1,4 @@
-[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/master/README.md)
+[Back to health-ext](https://github.com/microprofile-extensions/health-ext/blob/main/README.md)
 
 # Example Quarkus Application
 
